@@ -197,5 +197,28 @@ downloadBtn.addEventListener("click", () => {
   window.location.href = `${API_BASE}/api/export/download`;
 });
 
-renderPreview(null);
-setButtonLoading(false);
+async function preloadSampleDocument() {
+  try {
+    const response = await fetch(`${API_BASE}/prueba4.jpg`);
+
+    if (!response.ok) {
+      throw new Error("Sample document prueba4.jpg was not found.");
+    }
+
+    const blob = await response.blob();
+
+    const sampleFile = new File([blob], "prueba4.jpg", {
+      type: blob.type || "image/jpeg"
+    });
+
+    addFiles([sampleFile]);
+    setStatus("Ready to process.");
+  } catch (error) {
+    console.error(error);
+    renderPreview(null);
+    setStatus("Upload a file or add prueba4.jpg to preload the demo.", "neutral");
+    setButtonLoading(false);
+  }
+}
+
+window.addEventListener("DOMContentLoaded", preloadSampleDocument);
