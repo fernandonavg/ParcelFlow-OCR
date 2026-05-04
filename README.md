@@ -1,6 +1,6 @@
 # Parcel Flow 2.0 OCR Demo
 
-This version connects the front-end page to a Python FastAPI backend that runs your PaddleOCR parsing logic.
+This version connects the front-end page to a Python FastAPI backend that runs the PaddleOCR parsing logic.
 
 ## What is inside
 
