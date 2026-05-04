@@ -2,6 +2,8 @@ FROM python:3.10
 
 WORKDIR /app
 
+ENV PADDLE_PDX_ENABLE_MKLDNN_BYDEFAULT=0
+
 RUN apt-get update && apt-get install -y \
     libgl1 \
     libglib2.0-0 \
