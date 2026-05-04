@@ -1,3 +1,13 @@
+---
+title: ParcelFlow OCR
+emoji: 📦
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Parcel Flow 2.0 OCR Demo
 
 This version connects the front-end page to a Python FastAPI backend that runs the PaddleOCR parsing logic.
