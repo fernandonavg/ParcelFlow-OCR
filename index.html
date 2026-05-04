@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parcel Flow 2.0</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <div>
+        <p class="eyebrow">OCR logistics assistant</p>
+        <h1>Parcel Flow 2.0</h1>
+        <p class="subtitle">
+          Upload bills of lading, run your PaddleOCR parser, review extracted fields, and export clean rows.
+        </p>
+      </div>
+      <div class="status-pill">
+        <span class="dot"></span>
+        Backend OCR mode
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="upload-panel card">
+        <h2>Documents</h2>
+        <p class="muted">PDF, JPG, or PNG bills of lading</p>
+
+        <label class="dropzone" for="fileInput">
+          <input id="fileInput" type="file" multiple accept=".pdf,.jpg,.jpeg,.png" />
+          <span class="upload-icon">⇧</span>
+          <strong>Upload your files</strong>
+          <small>Click to browse or drag files here</small>
+        </label>
+
+        <div class="file-list" id="fileList"></div>
+      </aside>
+
+      <section class="preview-panel card">
+        <div class="panel-header">
+          <div>
+            <h2 id="currentFile">No file selected</h2>
+            <p class="muted">Document preview</p>
+          </div>
+          <button class="secondary-btn" id="processBtn">Run OCR</button>
+        </div>
+
+        <div class="status-line" id="statusText">Upload a document to begin.</div>
+        <div class="document-preview" id="documentPreview"></div>
+      </section>
+
+      <aside class="results-panel card">
+        <div class="panel-header">
+          <div>
+            <h2>Extracted fields</h2>
+            <p class="muted">Review before export</p>
+          </div>
+          <span class="confidence" id="confidence">--</span>
+        </div>
+
+        <form class="field-form">
+          <label>
+            Ship from / Shipper
+            <textarea id="shipFrom" rows="3" placeholder="Origin address"></textarea>
+          </label>
+          <label>
+            Ship to / Consignee
+            <textarea id="shipTo" rows="3" placeholder="Destination address"></textarea>
+          </label>
+          <label>
+            BOL number(s)
+            <input id="bol" type="text" placeholder="Bill of lading number" />
+          </label>
+          <label>
+            Load number(s)
+            <input id="load" type="text" placeholder="Load number" />
+          </label>
+          <label>
+            3rd party
+            <textarea id="thirdParty" rows="3" placeholder="Third-party billing"></textarea>
+          </label>
+          <label>
+            PO number(s)
+            <input id="po" type="text" placeholder="Purchase order number(s)" />
+          </label>
+          <label>
+            Weight
+            <input id="weight" type="text" placeholder="Weight" />
+          </label>
+        </form>
+
+        <div class="actions">
+          <button class="primary-btn" id="exportBtn">Export row</button>
+          <button class="secondary-btn" id="downloadBtn">Download CSV</button>
+          <button class="secondary-btn" id="clearBtn">Clear</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
