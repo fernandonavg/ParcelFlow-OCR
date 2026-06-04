@@ -165,7 +165,7 @@ The output layer is intentionally thin. `append_row_to_excel()` writes the same 
 
 ## Live Demo
 
-[Try it on Hugging Face Spaces](<your-huggingface-link>)
+[Try it on Hugging Face Spaces](<[your-huggingface-link](https://huggingface.co/spaces/fernandonavg/parcelflow-ocr)>)
 
 ---
 
