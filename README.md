@@ -13,7 +13,7 @@ Features:
 
 ## The Problem
 
-Freight companies generate huge thousands of scanned BOL documents every day, which are being processed manually. Each document contains essential information for parcel delivery including addresses (sender, receiver, billing address), article description and package identification numbers.
+Freight companies generate thousands of scanned BOL documents every day, which are being processed manually. Each document contains essential information for parcel delivery including addresses (sender, receiver, billing address), article description and package identification numbers.
 Documents arrive with no standardized structure, so the system built handles a wide variety of formats, missing information, handwritten information and low quality scans,
 
 ---
